@@ -9,30 +9,6 @@
 	int	score;
 } game; */
 
-//void	grid_render()
-
-/*
-//Puts piece in to grid.
-void	render_piece(int piece[4][4], int grid[20][16], int piece_y, int piece_x)
-{
-	int	i;
-	int	j;
-
-	j = 0;
-	while (j < 4)
-	{
-		i = 0;
-		while (i < 4)
-		{
-			if (piece[j][i] == 1)
-				grid[piece_y + j][piece_x + i] = 1;
-			i++;
-		}
-		j++;
-	}
-}
-*/
-
 void	spawn_piece(game *g)
 {
 	int	i = 0;

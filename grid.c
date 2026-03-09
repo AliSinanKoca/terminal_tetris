@@ -52,8 +52,6 @@ void	print_grid(game *g, int grid[20][16])
 {
 	int	i = 0;
 	int	j = 0;
-	int	pi = 0;
-	int	pj = 0;
 
 	printf("\e[1;1H\e[2J");
 	while (j < 20)
