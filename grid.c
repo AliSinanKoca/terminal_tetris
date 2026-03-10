@@ -13,7 +13,7 @@ void	create_grid(int grid[20][16])
 			if (i > 0 && i < 15)
 				grid[j][i] = 0;
 			else
-				grid[j][i] = 0;
+				grid[j][i] = 1;
 			i++;
 		}
 		j++;
@@ -61,9 +61,9 @@ void	print_grid(game *g, int grid[20][16])
 		{
 			if (i == 0 || i == 15)
 				printf("|");
-			else if (grid[j][i] == 1)
-				printf("#");
 			else if (is_piece_in_grid(g, i, j) == 1)
+				printf("#");
+			else if (grid[j][i] == 2)
 				printf("#");
 			else
 				printf(" ");
@@ -72,8 +72,5 @@ void	print_grid(game *g, int grid[20][16])
 		printf("\n");
 		j++;
 	}
-	i = 0;
-	while (i++ < 16)
-		printf("_");
 	printf("\n");
 }
