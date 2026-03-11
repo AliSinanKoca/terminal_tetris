@@ -2,10 +2,12 @@
 
 void	spawn_piece(game *g)
 {
-	int	i = 0;
-	int	j = 0;
-	int	idx = rand() % 7;
+	int	i;
+	int	j;
+	int	idx;
 
+	j = 0;
+	idx = rand() % 7;
 	while (j < 4)
 	{
 		i = 0;
@@ -37,8 +39,9 @@ int	check_collision(game *g, int mov_x, int mov_y)
 		pi = 0;
 		while (pi < 4)
 		{
-			if (g->piece[pj][pi] == 1
-				&& g->grid[py + pj + mov_y][px + pi + mov_x] == 2)
+			if (g->piece[pj][pi] == 1)
+				if (g->grid[py + pj + mov_y][px + pi + mov_x] == 2
+					|| g->grid[py + pj + mov_y][px + pi + mov_x] == 1)
 					return (1);
 			pi++;
 		}

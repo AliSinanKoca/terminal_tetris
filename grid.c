@@ -2,7 +2,8 @@
 
 void	create_grid(int grid[20][16])
 {
-	int	i, j;
+	int	i;
+	int	j;
 
 	j = 0;
 	while (j < 19)
@@ -51,9 +52,10 @@ int	is_piece_in_grid(game *g, int i, int j)
 
 void	print_grid(game *g, int grid[20][16])
 {
-	int	i = 0;
-	int	j = 0;
+	int	i;
+	int	j;
 
+	j = 0;
 	printf("\e[1;1H\e[2J");
 	while (j < 20)
 	{
