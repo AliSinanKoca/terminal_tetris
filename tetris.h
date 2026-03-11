@@ -32,7 +32,16 @@ void	print_grid(game *g, int grid[20][16]);
 //LINE CLEARING AND SHIFTING
 int	is_line_full(game *g, int j);
 void	shift_lines(game *g, int j);
-void	clear_top_line(game *g, int j);
+void	clear_top_line(game *g);
 void	clear_shift_lines(game *g);
+
+//PIECES MOVEMENT AND COLLISION LOGIC
+int	check_collision(game *g, int mov_x, int mov_y);
+void	spawn_piece(game *g);
+void	lock_piece(game *g);
+void	apply_gravity(game *g);
+
+//temp:
+void    game_over(void);
 
 #endif

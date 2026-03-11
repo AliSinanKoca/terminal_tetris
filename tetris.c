@@ -9,85 +9,26 @@
 	int	score;
 } game; */
 
-void	spawn_piece(game *g)
-{
-	int	i = 0;
-	int	j = 0;
-	int	idx = rand() % 7;
-
-	while (j < 4)
-	{
-		i = 0;
-		while (i < 4)
-		{
-			g->piece[j][i] = pieces[idx][j][i];
-			i++;
-		}
-		j++;
-	}
-	g->piece_x = 6;
-	g->piece_y = 0;
-}
-
-int	check_collisions(game *g)
-{
-	int	pi;
-	int	pj;
-	int	px;
-	int	py;
-
-	px = g->piece_x;
-	py = g->piece_y;
-	pj = 0;
-	while (pj < 4)
-	{
-		pi = 0;
-		while (pi < 4)
-		{
-			if (g->piece[pj][pi] == 1)
-			{
-				if (g->grid[py + pj + 1][px + pi] == 2)
-					return (1);
-			}
-			pi++;
-		}
-		pj++;
-	}
-	return (0);
-}
-
-void	lock_piece(game *g)
-{
-	int	i;
-	int	j;
-	int	px;
-	int	py;
-
-	px = g->piece_x;
-	py = g->piece_y;
-	j = 0;
-	while (j < 4)
-	{
-		i = 0;
-		while (i < 4)
-		{
-			if (g->piece[j][i] == 1)
-				g->grid[py + j][px + i] = 2;
-			i++;
-		}
-		j++;
-	}
-}
-
-void	apply_gravity(game *g)
+/*void	apply_gravity(game *g)
 {
 	if (!check_collisions(g))
 		g->piece_y++;
 	else
 	{
 		lock_piece(g);
+		clear_shift_lines(g);
 		spawn_piece(g);
+		if (check_game_over(g))
+			game_over();
 	}
+} */
+
+void	game_over(void)
+{
+//	exit_game_mode();
+	printf("\e[1;1H\e[2J");
+	printf("\n\n GAME OVER \n\n");
+	exit(0);
 }
 
 int	main(void)

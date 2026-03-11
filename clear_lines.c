@@ -32,7 +32,7 @@ void	shift_lines(game *g, int j)
 	}
 }
 
-void	clear_top_line(game *g, int j)
+void	clear_top_line(game *g)
 {
 	int	i;
 
@@ -55,7 +55,7 @@ void	clear_shift_lines(game *g)
 		if (is_line_full(g, j))
 		{
 			shift_lines(g, j);
-			clear_top_line(g, j);
+			clear_top_line(g);
 			if (j > 0)
 				j--;
 		}

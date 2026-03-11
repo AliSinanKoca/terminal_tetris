@@ -23,6 +23,7 @@ void	create_grid(int grid[20][16])
 		grid[j][i++] = 2;
 }
 
+//Checks if where we are in the grid, is there a block of the piece.
 int	is_piece_in_grid(game *g, int i, int j)
 {
 	int	pi;
