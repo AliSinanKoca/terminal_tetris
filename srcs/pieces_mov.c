@@ -18,7 +18,7 @@ void	copy_piece(int dest[4][4], int src[4][4])
 	}
 }
 
-//Also does wall-kicking, pretty fucking neat.
+//Also does a bit of wall-kicking.
 void	rotate_piece(game *g)
 {
 	int	i;

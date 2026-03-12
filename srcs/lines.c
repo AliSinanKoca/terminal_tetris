@@ -45,6 +45,7 @@ void	clear_top_line(game *g)
 }
 
 //Main line clearing and shifting function.
+//INCREASES SCORE TOO.
 void	clear_shift_lines(game *g)
 {
 	int	j;
@@ -56,6 +57,7 @@ void	clear_shift_lines(game *g)
 		{
 			shift_lines(g, j);
 			clear_top_line(g);
+			g->score += 100;
 			if (j > 0)
 				j--;
 		}
